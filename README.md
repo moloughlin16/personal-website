@@ -1,49 +1,36 @@
-# Earthquake Report
+This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
-A reproducible, self-updating report on global earthquake activity using live data from the USGS Earthquake Hazards Program. The report is built as a Quarto website and displays the 30-day history of earthquakes magnitude 4.5 and greater worldwide.
+## Getting Started
 
-## Data Source
+First, run the development server:
 
-Data comes from the [USGS Earthquake Hazards Program](https://earthquake.usgs.gov) live feed:
-
--   **URL:** `https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/4.5_month.csv`
--   **Update frequency:** Every 5 minutes
--   **Coverage:** All earthquakes magnitude 4.5+ in the past 30 days
--   **Format:** CSV with \~500 rows and 22 columns per download
-
-## How to Run
-
-### Required R packages
-
-``` r
-install.packages(c("tidyverse", "lubridate", "knitr"))
+```bash
+npm run dev
+# or
+yarn dev
+# or
+pnpm dev
+# or
+bun dev
 ```
 
-### Run the full pipeline
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-From the project root, run the following in order:
+You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
-``` r
-source("R/01-import.R")   # Downloads raw data from USGS into data/raw/
-source("R/02-clean.R")    # Cleans and saves to data/clean/
-quarto::quarto_render()   # Builds the website
-```
+This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
-Or run everything at once with:
+## Learn More
 
-``` r
-source("run-all.R")
-```
+To learn more about Next.js, take a look at the following resources:
 
-## What It Produces
+- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
+- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
-Running the pipeline generates a Quarto website in the `_site/` folder containing:
+You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
 
--   **Home page** — site landing page
--   **Report page** — includes:
-    -   Inline summary statistics (total earthquake count, strongest event)
-    -   Table of the 10 strongest earthquakes (date, magnitude, location)
-    -   Histogram of earthquake magnitude distribution
--   **About page** — project information
+## Deploy on Vercel
 
-Open `_site/index.html` in a browser to preview the site locally.
+The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+
+Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
