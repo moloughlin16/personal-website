@@ -1,3 +1,5 @@
+import { PolaroidPlaceholder } from "@/components/Polaroid";
+
 export default function CVPage() {
   return (
     <div className="max-w-4xl mx-auto px-6 py-16">
@@ -14,6 +16,10 @@ export default function CVPage() {
         >
           <p>Focus on implementation science, data analysis and visualization, and global health policy</p>
           <p>Thesis: Balancing Culture, Nutrition, and Budget: The Design &amp; Implementation of a Cost-Optimized Nutrition Program for Pediatric Cancer Patients in Tanzania</p>
+          <div className="flex gap-3 mt-3 flex-wrap">
+            <PolaroidPlaceholder caption="Tanzania" rotate="left" />
+            <PolaroidPlaceholder caption="Thesis poster" rotate="right" />
+          </div>
         </CVEntry>
         <CVEntry
           title="Brigham Young University"
@@ -50,6 +56,9 @@ export default function CVPage() {
           <p>
             I spent a season working as a housekeeper in Denali, AK for Holland America/Princess Cruise Lines as part of their land-cruise operation.
           </p>
+          <div className="flex gap-3 mt-3 flex-wrap">
+            <PolaroidPlaceholder caption="Denali" rotate="left" />
+          </div>
         </CVEntry>
         <CVEntry
           title="Assistant Executive Director"
@@ -59,6 +68,10 @@ export default function CVPage() {
           <p>
             This was one of those roles where I got to do a bit of everything. I started the organization&apos;s first real monitoring and evaluation process, tracked outcomes for 80+ patients, and matched people with partner clinics around the world so they could get care. I helped lead a project in the Dominican Republic building prosthetic legs for 63 patients, built out our OKRs and weekly tracking system, and raised money while helping bring in hundreds of donated components. I also took on social media and fundraising campaigns and spent a lot of time figuring out how to make our impact and operations a lot sharper.
           </p>
+          <div className="flex gap-3 mt-3 flex-wrap">
+            <PolaroidPlaceholder caption="Dominican Republic" rotate="right" />
+            <PolaroidPlaceholder caption="2ft team" rotate="left" />
+          </div>
         </CVEntry>
         <CVEntry
           title="John R. Lewis Public Health Scholar"
@@ -68,6 +81,9 @@ export default function CVPage() {
           <p>
             I was selected for this competitive, 8-week summer internship through the CDC. I received public health training, with a focus on tribal health in the US. I also worked with a mentor on a project examining disparities in amputation rates among American Indian and Alaska Native communities. We finished the program presenting our findings at the CDC.
           </p>
+          <div className="flex gap-3 mt-3 flex-wrap">
+            <PolaroidPlaceholder caption="CDC poster" rotate="right" />
+          </div>
         </CVEntry>
         <CVEntry
           title="Intern"
@@ -77,6 +93,10 @@ export default function CVPage() {
           <p>
             I worked with Yoga and Sport with Refugees in Lesvos, Greece, helping run their gym and facilitating a welcoming environment. I taught a women&apos;s self-defense class, updated the website, and took trainings on EU refugee policy/current events. This was such a meaningful experience to me and taught me firsthand the power of sports for community-building and resilience.
           </p>
+          <div className="flex gap-3 mt-3 flex-wrap">
+            <PolaroidPlaceholder caption="Lesvos" rotate="left" />
+            <PolaroidPlaceholder caption="The gym" rotate="right" />
+          </div>
         </CVEntry>
         <CVEntry
           title="Coach"
@@ -102,6 +122,9 @@ export default function CVPage() {
           <p>
             I worked as a live-in nanny for a French family living in Greece to help their children learn English.
           </p>
+          <div className="flex gap-3 mt-3 flex-wrap">
+            <PolaroidPlaceholder caption="Crete" rotate="right" />
+          </div>
         </CVEntry>
       </Section>
 
@@ -169,6 +192,9 @@ export default function CVPage() {
           <p>
             I spent 18 months talking to strangers, helping with local service projects, and sharing the message of Jesus Christ across Colorado, Wyoming, and Nebraska. It was exhausting, humbling, and one of the most rewarding experiences of my life.
           </p>
+          <div className="flex gap-3 mt-3 flex-wrap">
+            <PolaroidPlaceholder caption="Colorado" rotate="left" />
+          </div>
         </CVEntry>
       </Section>
 
