@@ -90,7 +90,8 @@ export default function CVPage() {
             I was selected for this competitive, 8-week summer internship through the CDC. I received public health training, with a focus on tribal health in the US. I also worked with a mentor on a project examining disparities in amputation rates among American Indian and Alaska Native communities. We finished the program presenting our findings at the CDC.
           </p>
           <div className="flex gap-3 mt-3 flex-wrap">
-            <Polaroid src="/images/cdc-showcase.jpg" caption="CDC showcase" rotate="right" />
+            <Polaroid src="/images/cdc-selfie.jpg" caption="CDC" rotate="left" />
+            <PolaroidPlaceholder caption="Research poster" rotate="right" />
           </div>
         </CVEntry>
         <CVEntry
