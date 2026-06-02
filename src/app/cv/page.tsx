@@ -113,6 +113,9 @@ export default function CVPage() {
           date="Apr 2021 – Feb 2023"
         >
           <p>I taught kickboxing and jiujitsu to kids ages 4–12.</p>
+          <div className="flex gap-3 mt-3 flex-wrap">
+            <Polaroid src="/images/agema-kids.jpg" caption="Kids class" rotate="right" />
+          </div>
         </CVEntry>
         <CVEntry
           title="Mentor"
