@@ -131,7 +131,7 @@ export default function CVPage() {
             I worked as a live-in nanny for a French family living in Greece to help their children learn English.
           </p>
           <div className="flex gap-3 mt-3 flex-wrap">
-            <PolaroidPlaceholder caption="Crete" rotate="right" />
+            <Polaroid src="/images/crete.jpg" caption="Crete" rotate="right" />
           </div>
         </CVEntry>
       </Section>
