@@ -1,4 +1,4 @@
-import Polaroid, { PolaroidPlaceholder } from "@/components/Polaroid";
+import Polaroid from "@/components/Polaroid";
 
 export default function CVPage() {
   return (
@@ -158,17 +158,8 @@ export default function CVPage() {
           </p>
         </CVEntry>
         <CVEntry
-          title="Proyecto Casa"
-          subtitle=""
-          date="Oct 2024 – Dec 2024"
-        >
-          <p>
-            I launched a grassroots fundraising campaign for Christmas to help rebuild a friend&apos;s family home in Venezuela, raising over $5,000 in under two months. I built a custom donation website that offered a &ldquo;shopping cart&rdquo; experience, allowing donors to &ldquo;purchase&rdquo; specific items needed.
-          </p>
-        </CVEntry>
-        <CVEntry
-          title="Volunteer"
-          subtitle="Know Your Neighbor | Salt Lake City, UT"
+          title="Know Your Neighbor"
+          subtitle="Salt Lake City, UT"
           date="Jan 2021 – Feb 2023"
         >
           <p>
@@ -176,8 +167,8 @@ export default function CVPage() {
           </p>
         </CVEntry>
         <CVEntry
-          title="Volunteer"
-          subtitle="Anatomy Academy | Provo, UT"
+          title="Anatomy Academy"
+          subtitle="Provo, UT"
           date="Sep 2019 – Jun 2022"
         >
           <p>
@@ -185,8 +176,8 @@ export default function CVPage() {
           </p>
         </CVEntry>
         <CVEntry
-          title="Volunteer"
-          subtitle="Bountiful Children's Foundation | Provo, UT"
+          title="Bountiful Children's Foundation"
+          subtitle="Provo, UT"
           date="Sep 2020 – Jun 2021"
         >
           <p>
@@ -194,16 +185,13 @@ export default function CVPage() {
           </p>
         </CVEntry>
         <CVEntry
-          title="Volunteer Service"
+          title="Missionary"
           subtitle="Church of Jesus Christ of Latter-day Saints | Fort Collins, CO"
           date="Aug 2017 – Mar 2019"
         >
           <p>
             I spent 18 months talking to strangers, helping with local service projects, and sharing the message of Jesus Christ across Colorado, Wyoming, and Nebraska. It was exhausting, humbling, and one of the most rewarding experiences of my life.
           </p>
-          <div className="flex gap-3 mt-3 flex-wrap">
-            <PolaroidPlaceholder caption="Colorado" rotate="left" />
-          </div>
         </CVEntry>
       </Section>
 
