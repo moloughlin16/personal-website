@@ -25,7 +25,11 @@ export default function CVPage() {
           title="Brigham Young University"
           subtitle="BS in Public Health, Health Science emphasis | Minor in International Development"
           date="Aug 2016 – Jun 2023"
-        />
+        >
+          <div className="flex gap-3 mt-3 flex-wrap">
+            <Polaroid src="/images/byu.jpg" caption="BYU" rotate="right" />
+          </div>
+        </CVEntry>
       </Section>
 
       {/* Work Experience */}
@@ -38,6 +42,9 @@ export default function CVPage() {
           <p>
             I spent most of my time at EPI trying to figure out how we could better collect and utilize our data. I built a custom, interactive data dashboard powered by an automated data pipeline that delivers live updates from our field surveys, giving staff in Ghana and the U.S. real-time visibility into every school we serve. I also co-designed better surveys with our team in Ghana and the University of Ghana, trained staff on stronger data collection practices, and helped with fundraising campaigns to show donors the real impact of our work.
           </p>
+          <div className="flex gap-3 mt-3 flex-wrap">
+            <Polaroid src="/images/epi-ghana.jpg" caption="Ghana" rotate="right" />
+          </div>
         </CVEntry>
         <CVEntry
           title="Research Assistant"
@@ -57,7 +64,7 @@ export default function CVPage() {
             I spent a season working as a housekeeper in Denali, AK for Holland America/Princess Cruise Lines as part of their land-cruise operation.
           </p>
           <div className="flex gap-3 mt-3 flex-wrap">
-            <PolaroidPlaceholder caption="Denali" rotate="left" />
+            <Polaroid src="/images/denali.jpg" caption="Denali" rotate="left" />
           </div>
         </CVEntry>
         <CVEntry
@@ -69,8 +76,8 @@ export default function CVPage() {
             This was one of those roles where I got to do a bit of everything. I started the organization&apos;s first real monitoring and evaluation process, tracked outcomes for 80+ patients, and matched people with partner clinics around the world so they could get care. I helped lead a project in the Dominican Republic building prosthetic legs for 63 patients, built out our OKRs and weekly tracking system, and raised money while helping bring in hundreds of donated components. I also took on social media and fundraising campaigns and spent a lot of time figuring out how to make our impact and operations a lot sharper.
           </p>
           <div className="flex gap-3 mt-3 flex-wrap">
-            <PolaroidPlaceholder caption="Dominican Republic" rotate="right" />
-            <PolaroidPlaceholder caption="2ft team" rotate="left" />
+            <Polaroid src="/images/2ft-fitting.jpg" caption="Dominican Republic" rotate="right" />
+            <Polaroid src="/images/2ft-team.jpg" caption="2ft team" rotate="left" />
           </div>
         </CVEntry>
         <CVEntry
@@ -82,7 +89,7 @@ export default function CVPage() {
             I was selected for this competitive, 8-week summer internship through the CDC. I received public health training, with a focus on tribal health in the US. I also worked with a mentor on a project examining disparities in amputation rates among American Indian and Alaska Native communities. We finished the program presenting our findings at the CDC.
           </p>
           <div className="flex gap-3 mt-3 flex-wrap">
-            <PolaroidPlaceholder caption="CDC poster" rotate="right" />
+            <Polaroid src="/images/cdc-showcase.jpg" caption="CDC showcase" rotate="right" />
           </div>
         </CVEntry>
         <CVEntry
@@ -94,8 +101,7 @@ export default function CVPage() {
             I worked with Yoga and Sport with Refugees in Lesvos, Greece, helping run their gym and facilitating a welcoming environment. I taught a women&apos;s self-defense class, updated the website, and took trainings on EU refugee policy/current events. This was such a meaningful experience to me and taught me firsthand the power of sports for community-building and resilience.
           </p>
           <div className="flex gap-3 mt-3 flex-wrap">
-            <PolaroidPlaceholder caption="Lesvos" rotate="left" />
-            <PolaroidPlaceholder caption="The gym" rotate="right" />
+            <Polaroid src="/images/ysr-gym.jpg" caption="Lesvos" rotate="left" />
           </div>
         </CVEntry>
         <CVEntry
