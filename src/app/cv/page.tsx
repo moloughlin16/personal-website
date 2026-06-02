@@ -1,4 +1,4 @@
-import { PolaroidPlaceholder } from "@/components/Polaroid";
+import Polaroid, { PolaroidPlaceholder } from "@/components/Polaroid";
 
 export default function CVPage() {
   return (
@@ -17,8 +17,8 @@ export default function CVPage() {
           <p>Focus on implementation science, data analysis and visualization, and global health policy</p>
           <p>Thesis: Balancing Culture, Nutrition, and Budget: The Design &amp; Implementation of a Cost-Optimized Nutrition Program for Pediatric Cancer Patients in Tanzania</p>
           <div className="flex gap-3 mt-3 flex-wrap">
-            <PolaroidPlaceholder caption="Tanzania" rotate="left" />
-            <PolaroidPlaceholder caption="Thesis poster" rotate="right" />
+            <Polaroid src="/images/graduation.jpg" caption="Graduation" rotate="left" />
+            <Polaroid src="/images/thesis-defense.jpg" caption="Thesis defense" rotate="right" />
           </div>
         </CVEntry>
         <CVEntry
