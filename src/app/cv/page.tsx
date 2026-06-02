@@ -78,6 +78,7 @@ export default function CVPage() {
           <div className="flex gap-3 mt-3 flex-wrap">
             <Polaroid src="/images/2ft-fitting.jpg" caption="Dominican Republic" rotate="right" />
             <Polaroid src="/images/2ft-team.jpg" caption="2ft team" rotate="left" />
+            <Polaroid src="/images/2ft-meeting.jpg" caption="Partner clinic" rotate="right" />
           </div>
         </CVEntry>
         <CVEntry
