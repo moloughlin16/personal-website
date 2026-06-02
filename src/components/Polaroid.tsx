@@ -18,7 +18,7 @@ export default function Polaroid({
 
   return (
     <div
-      className={`inline-block bg-white dark:bg-zinc-100 p-2 pb-8 shadow-md hover:shadow-xl transition-all hover:scale-105 ${rotateClass}`}
+      className={`inline-block bg-white dark:bg-zinc-100 p-2 pb-3 shadow-md hover:shadow-xl transition-all hover:scale-105 ${rotateClass}`}
     >
       <div className="relative w-40 h-32 sm:w-48 sm:h-36 overflow-hidden bg-zinc-200">
         <Image
@@ -28,9 +28,6 @@ export default function Polaroid({
           className="object-cover"
         />
       </div>
-      <p className="text-xs text-zinc-500 mt-2 text-center font-handwriting">
-        {caption}
-      </p>
     </div>
   );
 }
