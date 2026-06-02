@@ -103,7 +103,8 @@ export default function CVPage() {
             I worked with Yoga and Sport with Refugees in Lesvos, Greece, helping run their gym and facilitating a welcoming environment. I taught a women&apos;s self-defense class, updated the website, and took trainings on EU refugee policy/current events. This was such a meaningful experience to me and taught me firsthand the power of sports for community-building and resilience.
           </p>
           <div className="flex gap-3 mt-3 flex-wrap">
-            <Polaroid src="/images/ysr-gym.jpg" caption="Lesvos" rotate="left" />
+            <Polaroid src="/images/ysr.jpg" caption="Lesvos" rotate="left" />
+            <Polaroid src="/images/ysr-door.jpg" caption="The gym" rotate="right" />
           </div>
         </CVEntry>
         <CVEntry
