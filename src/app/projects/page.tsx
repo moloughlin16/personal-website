@@ -51,15 +51,7 @@ const projects: Project[] = [
       "/images/epi-ghana.jpg",
     ],
   },
-  {
-    title: "Proyecto Casa",
-    shortDescription:
-      "Launched a grassroots fundraising campaign to help rebuild a friend's family home in Venezuela, raising over $5,000 in under two months",
-    fullDescription:
-      "Launched a grassroots fundraising campaign for Christmas to help rebuild a friend's family home in Venezuela, raising over $5,000 in under two months. Built a custom donation website that offered a \"shopping cart\" experience, allowing donors to \"purchase\" specific items needed. Coordinated outreach, donor engagement, and financial tracking to ensure transparency and impact.",
-    tags: ["Fundraising", "Web Design"],
-  },
-  {
+{
     title: "Comparing Refugee Camps Across Greece, Türkiye, and Chad",
     shortDescription:
       "I was part of a team researching select topics on refugee camp management globally. I contributed to an article comparing and contrasting refugee camps between Greece, Türkiye, and Chad",
