@@ -23,7 +23,10 @@ export function ProjectCard({
 }) {
   return (
     <button
-      onClick={onClick}
+      onClick={(e) => {
+        e.stopPropagation();
+        onClick();
+      }}
       className="group block w-full text-left rounded-2xl border border-card-border bg-card-bg p-6 transition-all hover:shadow-lg hover:-translate-y-1 hover:border-accent/30"
     >
       <h2 className="text-xl font-semibold mb-2 group-hover:text-accent transition-colors">
@@ -88,21 +91,51 @@ export function ProjectModal({
 
   return (
     <div
-      className="fixed inset-0 z-50 flex items-center justify-center p-4"
-      onClick={onClose}
+      style={{
+        position: "fixed",
+        top: 0,
+        left: 0,
+        right: 0,
+        bottom: 0,
+        zIndex: 9999,
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
+        padding: 16,
+      }}
+      onClick={(e) => {
+        if (e.target === e.currentTarget) onClose();
+      }}
     >
       {/* Backdrop */}
-      <div className="absolute inset-0 bg-black/60 backdrop-blur-sm" />
+      <div
+        style={{
+          position: "absolute",
+          top: 0,
+          left: 0,
+          right: 0,
+          bottom: 0,
+          backgroundColor: "rgba(0,0,0,0.6)",
+          backdropFilter: "blur(4px)",
+        }}
+      />
 
       {/* Modal */}
       <div
-        className="relative bg-card-bg border border-card-border rounded-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto shadow-2xl"
-        onClick={(e) => e.stopPropagation()}
+        style={{
+          position: "relative",
+          maxHeight: "90vh",
+          overflowY: "auto",
+          width: "100%",
+          maxWidth: 672,
+        }}
+        className="bg-card-bg border border-card-border rounded-2xl shadow-2xl"
       >
         {/* Close button */}
         <button
           onClick={onClose}
-          className="absolute top-4 right-4 z-10 w-8 h-8 flex items-center justify-center rounded-full bg-card-bg/80 border border-card-border hover:border-accent transition-colors"
+          style={{ position: "absolute", top: 16, right: 16, zIndex: 10 }}
+          className="w-8 h-8 flex items-center justify-center rounded-full bg-card-bg/80 border border-card-border hover:border-accent transition-colors"
         >
           <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
@@ -111,11 +144,15 @@ export function ProjectModal({
 
         {/* Image carousel */}
         {project.images && project.images.length > 0 && (
-          <div className="relative w-full aspect-video bg-zinc-900 rounded-t-2xl overflow-hidden">
+          <div
+            style={{ position: "relative", width: "100%", aspectRatio: "16/9", overflow: "hidden" }}
+            className="bg-zinc-900 rounded-t-2xl"
+          >
             <Image
               src={project.images[currentImage]}
               alt={`${project.title} image ${currentImage + 1}`}
               fill
+              sizes="(max-width: 672px) 100vw, 672px"
               className="object-contain"
             />
 
@@ -127,7 +164,8 @@ export function ProjectModal({
                       prev === 0 ? project.images!.length - 1 : prev - 1
                     )
                   }
-                  className="absolute left-3 top-1/2 -translate-y-1/2 w-8 h-8 flex items-center justify-center rounded-full bg-black/50 text-white hover:bg-black/70 transition-colors"
+                  style={{ position: "absolute", left: 12, top: "50%", transform: "translateY(-50%)" }}
+                  className="w-8 h-8 flex items-center justify-center rounded-full bg-black/50 text-white hover:bg-black/70 transition-colors"
                 >
                   <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
@@ -139,7 +177,8 @@ export function ProjectModal({
                       prev === project.images!.length - 1 ? 0 : prev + 1
                     )
                   }
-                  className="absolute right-3 top-1/2 -translate-y-1/2 w-8 h-8 flex items-center justify-center rounded-full bg-black/50 text-white hover:bg-black/70 transition-colors"
+                  style={{ position: "absolute", right: 12, top: "50%", transform: "translateY(-50%)" }}
+                  className="w-8 h-8 flex items-center justify-center rounded-full bg-black/50 text-white hover:bg-black/70 transition-colors"
                 >
                   <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
@@ -147,7 +186,10 @@ export function ProjectModal({
                 </button>
 
                 {/* Dots */}
-                <div className="absolute bottom-3 left-1/2 -translate-x-1/2 flex gap-1.5">
+                <div
+                  style={{ position: "absolute", bottom: 12, left: "50%", transform: "translateX(-50%)" }}
+                  className="flex gap-1.5"
+                >
                   {project.images.map((_, i) => (
                     <button
                       key={i}

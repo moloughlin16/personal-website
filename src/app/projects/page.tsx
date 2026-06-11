@@ -25,7 +25,14 @@ const projects: Project[] = [
     linkLabel: "View on Duke Global Health",
     images: [
       "/images/thesis-defense.jpg",
-      "/images/graduation.jpg",
+      "/images/thesis-1.jpg",
+      "/images/thesis-2.jpg",
+      "/images/thesis-3.jpg",
+      "/images/thesis-4.jpg",
+      "/images/thesis-5.jpg",
+      "/images/thesis-6.jpg",
+      "/images/thesis-7.jpg",
+      "/images/thesis-8.jpg",
     ],
   },
   {
@@ -49,6 +56,12 @@ const projects: Project[] = [
     caption: "Built with Claude Code as my pair programmer",
     images: [
       "/images/epi-ghana.jpg",
+      "/images/epi-dash-1.png",
+      "/images/epi-dash-2.png",
+      "/images/epi-dash-3.png",
+      "/images/epi-dash-4.png",
+      "/images/epi-dash-5.png",
+      "/images/epi-dash-6.png",
     ],
   },
 {
@@ -69,6 +82,17 @@ const projects: Project[] = [
       "This is a family recipe app I made for my mom. The \"Help me decide\" feature walks through a quick decision tree (who's home, preferred cuisines, ingredients she wants to use up, how much time she has, etc) to narrow down what to make. A swipeable \"Try Something New\" mode pulls fresh ideas from Spoonacular when she wants inspiration. To add recipes to the library, she can snap a photo of a recipe card or paste a link, and AI extracts the title, ingredients, and steps automatically. She can also plan out weekly meals and generate a one-click grocery list that merges ingredients across every planned recipe.",
     tags: ["Next.js", "Supabase", "TypeScript", "Claude API"],
     caption: "Built with Claude Code as my pair programmer",
+    images: [
+      "/images/moms-meals-1.png",
+      "/images/moms-meals-2.png",
+      "/images/moms-meals-3.png",
+      "/images/moms-meals-4.png",
+      "/images/moms-meals-5.png",
+      "/images/moms-meals-6.png",
+      "/images/moms-meals-7.png",
+      "/images/moms-meals-8.png",
+      "/images/moms-meals-9.png",
+    ],
   },
 ];
 
