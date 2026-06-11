@@ -55,7 +55,6 @@ const projects: Project[] = [
     ],
     caption: "Built with Claude Code as my pair programmer",
     images: [
-      "/images/epi-ghana.jpg",
       "/images/epi-dash-1.png",
       "/images/epi-dash-2.png",
       "/images/epi-dash-3.png",
