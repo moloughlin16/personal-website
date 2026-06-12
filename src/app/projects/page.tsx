@@ -72,6 +72,7 @@ const projects: Project[] = [
     tags: ["Literature Reviews", "Academic Writing"],
     link: "https://www.tandfonline.com/doi/full/10.1080/09332480.2025.2575730",
     linkLabel: "Read the publication",
+    images: ["/images/chance-cover.jpg"],
   },
   {
     title: "Family Recipe App",
@@ -99,10 +100,7 @@ export default function ProjectsPage() {
 
   return (
     <div className="max-w-5xl mx-auto px-6 py-16">
-      <h1 className="text-4xl font-bold mb-2 animate-fade-in-up">Projects</h1>
-      <p className="text-muted mb-12 animate-fade-in-up stagger-1">
-        Research, builds, and passion projects.
-      </p>
+      <h1 className="text-4xl font-bold mb-12 animate-fade-in-up">Projects</h1>
 
       <div className="grid md:grid-cols-2 gap-6">
         {projects.map((project, i) => (

@@ -27,28 +27,44 @@ export function ProjectCard({
         e.stopPropagation();
         onClick();
       }}
-      className="group block w-full text-left rounded-2xl border border-card-border bg-card-bg p-6 transition-all hover:shadow-lg hover:-translate-y-1 hover:border-accent/30"
+      className="group block w-full text-left rounded-2xl border border-card-border bg-card-bg overflow-hidden transition-all hover:shadow-lg hover:-translate-y-1 hover:border-accent/30"
     >
-      <h2 className="text-xl font-semibold mb-2 group-hover:text-accent transition-colors">
-        {project.title}
-      </h2>
-      <p className="text-muted text-sm leading-relaxed mb-4">
-        {project.shortDescription}...
-      </p>
-      <div className="flex flex-wrap gap-2">
-        {project.tags.slice(0, 4).map((tag) => (
-          <span
-            key={tag}
-            className="px-2 py-0.5 rounded-full text-xs bg-accent/10 text-accent font-medium"
-          >
-            {tag}
-          </span>
-        ))}
-        {project.tags.length > 4 && (
-          <span className="px-2 py-0.5 rounded-full text-xs bg-accent/10 text-accent font-medium">
-            +{project.tags.length - 4} more
-          </span>
-        )}
+      {project.images && project.images.length > 0 && (
+        <div
+          style={{ position: "relative", width: "100%", aspectRatio: "16/9", overflow: "hidden" }}
+          className="bg-zinc-100 dark:bg-zinc-800"
+        >
+          <Image
+            src={project.images[0]}
+            alt={`${project.title} preview`}
+            fill
+            sizes="(max-width: 768px) 100vw, 50vw"
+            className="object-cover transition-transform duration-500 group-hover:scale-105"
+          />
+        </div>
+      )}
+      <div className="p-6">
+        <h2 className="text-xl font-semibold mb-2 group-hover:text-accent transition-colors">
+          {project.title}
+        </h2>
+        <p className="text-muted text-sm leading-relaxed mb-4">
+          {project.shortDescription}...
+        </p>
+        <div className="flex flex-wrap gap-2">
+          {project.tags.slice(0, 4).map((tag) => (
+            <span
+              key={tag}
+              className="px-2 py-0.5 rounded-full text-xs bg-accent/10 text-accent font-medium"
+            >
+              {tag}
+            </span>
+          ))}
+          {project.tags.length > 4 && (
+            <span className="px-2 py-0.5 rounded-full text-xs bg-accent/10 text-accent font-medium">
+              +{project.tags.length - 4} more
+            </span>
+          )}
+        </div>
       </div>
     </button>
   );
