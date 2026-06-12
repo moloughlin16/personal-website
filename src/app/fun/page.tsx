@@ -34,8 +34,8 @@ const categories: FunCategory[] = [
   {
     title: "Painting",
     photos: [
-      "/images/fun/painting/pt-1.jpg",
       "/images/fun/painting/pt-2.jpg",
+      "/images/fun/painting/pt-1.jpg",
       "/images/fun/painting/pt-3.jpg",
       "/images/fun/painting/pt-4.jpg",
       "/images/fun/painting/pt-5.jpg",
@@ -136,6 +136,7 @@ export default function FunPage() {
                 width: "100%",
                 aspectRatio: i === 0 ? "4/3" : "1/1",
                 overflow: "hidden",
+                backgroundColor: i === 0 ? "var(--card-bg)" : undefined,
               }}
               className="rounded-xl group"
             >
@@ -148,7 +149,7 @@ export default function FunPage() {
                     ? "(max-width: 768px) 100vw, 66vw"
                     : "(max-width: 768px) 100vw, 33vw"
                 }
-                className="object-cover transition-transform duration-500 group-hover:scale-105"
+                className={`${i === 0 ? "object-contain" : "object-cover"} transition-transform duration-500 group-hover:scale-105`}
               />
             </div>
           </ScrollReveal>
