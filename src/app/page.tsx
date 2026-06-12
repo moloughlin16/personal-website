@@ -10,7 +10,7 @@ export default function Home() {
           src="/images/hammock.jpg"
           alt="Morgan in a hammock in the mountains"
           width={2400}
-          height={1195}
+          height={976}
           priority
           className="hero-banner-img"
         />
