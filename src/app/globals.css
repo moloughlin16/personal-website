@@ -3,8 +3,8 @@
 :root {
   --background: #f7f8fa;
   --foreground: #2d2d2d;
-  --accent: #3a7d6e;
-  --accent-light: #4a9485;
+  --accent: #2c4a8a;
+  --accent-light: #3d5fa3;
   --muted: #6b7280;
   --card-bg: #ffffff;
   --card-border: #e8e4e0;
@@ -26,8 +26,8 @@
   :root {
     --background: #1a1a2e;
     --foreground: #eaeaea;
-    --accent: #3a7d6e;
-    --accent-light: #4a9485;
+    --accent: #2c4a8a;
+    --accent-light: #3d5fa3;
     --muted: #9ca3af;
     --card-bg: #22223b;
     --card-border: #3d3d5c;
