@@ -42,7 +42,7 @@ export default function Home() {
               href="/fun"
               className="inline-flex items-center gap-2 border border-card-border px-6 py-3 rounded-full font-medium hover:border-accent hover:text-accent transition-colors"
             >
-              Fun stuff
+              Life Outside Work
             </Link>
           </div>
         </section>

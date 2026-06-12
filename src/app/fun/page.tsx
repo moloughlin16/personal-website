@@ -83,7 +83,7 @@ export default function FunPage() {
   return (
     <div className="max-w-6xl mx-auto px-6 py-16">
       <h1 className="text-4xl font-bold mb-2 animate-fade-in-up">
-        Fun Stuff
+        Life Outside Work
       </h1>
       <p className="text-muted mb-12 animate-fade-in-up stagger-1">
         A few things I love to do in my free time
