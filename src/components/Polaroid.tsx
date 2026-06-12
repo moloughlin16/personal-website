@@ -4,10 +4,12 @@ export default function Polaroid({
   src,
   caption,
   rotate = "right",
+  portrait = false,
 }: {
   src: string;
   caption: string;
   rotate?: "left" | "right" | "none";
+  portrait?: boolean;
 }) {
   const rotateClass =
     rotate === "left"
@@ -16,11 +18,15 @@ export default function Polaroid({
         ? "rotate-2"
         : "";
 
+  const sizeClass = portrait
+    ? "w-32 h-44 sm:w-36 sm:h-48"
+    : "w-40 h-32 sm:w-48 sm:h-36";
+
   return (
     <div
       className={`inline-block bg-white dark:bg-zinc-100 p-2 pb-3 shadow-md hover:shadow-xl transition-all hover:scale-105 ${rotateClass}`}
     >
-      <div className="relative w-40 h-32 sm:w-48 sm:h-36 overflow-hidden bg-zinc-200">
+      <div className={`relative ${sizeClass} overflow-hidden bg-zinc-200`}>
         <Image
           src={src}
           alt={caption}

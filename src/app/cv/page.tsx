@@ -76,8 +76,6 @@ export default function CVPage() {
           </p>
           <div className="flex gap-3 mt-3 flex-wrap">
             <Polaroid src="/images/2ft-fitting.jpg" caption="Dominican Republic" rotate="right" />
-            <Polaroid src="/images/2ft-team.jpg" caption="2ft team" rotate="left" />
-            <Polaroid src="/images/2ft-meeting.jpg" caption="Partner clinic" rotate="right" />
           </div>
         </CVEntry>
         <CVEntry
@@ -89,8 +87,7 @@ export default function CVPage() {
             I was selected for this competitive, 8-week summer internship through the CDC. I received public health training, with a focus on tribal health in the US. I also worked with a mentor on a project examining disparities in amputation rates among American Indian and Alaska Native communities. We finished the program presenting our findings at the CDC.
           </p>
           <div className="flex gap-3 mt-3 flex-wrap">
-            <Polaroid src="/images/cdc-selfie.jpg" caption="CDC" rotate="left" />
-            <Polaroid src="/images/cdc-poster.jpg" caption="Research poster" rotate="right" />
+            <Polaroid src="/images/cdc-selfie.jpg" caption="CDC" rotate="left" portrait />
           </div>
         </CVEntry>
         <CVEntry
@@ -103,7 +100,6 @@ export default function CVPage() {
           </p>
           <div className="flex gap-3 mt-3 flex-wrap">
             <Polaroid src="/images/ysr.jpg" caption="Lesvos" rotate="left" />
-            <Polaroid src="/images/ysr-door.jpg" caption="The gym" rotate="right" />
           </div>
         </CVEntry>
         <CVEntry
