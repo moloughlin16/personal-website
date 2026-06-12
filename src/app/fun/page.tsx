@@ -11,16 +11,13 @@ type FunCategory = {
 
 const categories: FunCategory[] = [
   {
-    title: "Adventures",
+    title: "Martial Arts",
     photos: [
-      "/images/fun/adventures/adventures-1.jpg",
-      "/images/fun/adventures/adventures-2.jpg",
-      "/images/fun/adventures/adventures-3.jpg",
-      "/images/fun/adventures/adventures-4.jpg",
-      "/images/fun/adventures/adventures-5.jpg",
-      "/images/fun/adventures/adventures-6.jpg",
-      "/images/fun/adventures/adventures-7.jpg",
-      "/images/fun/adventures/adventures-8.jpg",
+      "/images/fun/martial-arts/martial-arts-1.jpg",
+      "/images/fun/martial-arts/martial-arts-2.jpg",
+      "/images/fun/martial-arts/martial-arts-3.jpg",
+      "/images/fun/martial-arts/martial-arts-4.jpg",
+      "/images/fun/martial-arts/martial-arts-5.jpg",
     ],
   },
   {
@@ -35,22 +32,26 @@ const categories: FunCategory[] = [
     ],
   },
   {
-    title: "Martial Arts",
-    photos: [
-      "/images/fun/martial-arts/martial-arts-1.jpg",
-      "/images/fun/martial-arts/martial-arts-2.jpg",
-      "/images/fun/martial-arts/martial-arts-3.jpg",
-      "/images/fun/martial-arts/martial-arts-4.jpg",
-      "/images/fun/martial-arts/martial-arts-5.jpg",
-    ],
-  },
-  {
     title: "Painting",
     photos: [
       "/images/fun/painting/painting-1.jpg",
       "/images/fun/painting/painting-2.jpg",
       "/images/fun/painting/painting-3.jpg",
       "/images/fun/painting/painting-4.jpg",
+      "/images/fun/painting/painting-5.jpg",
+    ],
+  },
+  {
+    title: "Adventures",
+    photos: [
+      "/images/fun/adventures/adventures-1.jpg",
+      "/images/fun/adventures/adventures-2.jpg",
+      "/images/fun/adventures/adventures-3.jpg",
+      "/images/fun/adventures/adventures-4.jpg",
+      "/images/fun/adventures/adventures-5.jpg",
+      "/images/fun/adventures/adventures-6.jpg",
+      "/images/fun/adventures/adventures-7.jpg",
+      "/images/fun/adventures/adventures-8.jpg",
     ],
   },
 ];
@@ -63,10 +64,10 @@ export default function FunPage() {
     setActiveIndex((prev) => (prev + 1) % categories.length);
   }, []);
 
-  // Auto-cycle every 5 seconds unless paused
+  // Auto-cycle every 10 seconds unless paused
   useEffect(() => {
     if (isPaused) return;
-    const timer = setInterval(advance, 5000);
+    const timer = setInterval(advance, 10000);
     return () => clearInterval(timer);
   }, [isPaused, advance]);
 
