@@ -108,3 +108,24 @@ body {
     grid-template-columns: repeat(2, 1fr);
   }
 }
+
+/* Fun page tab transition */
+@keyframes fun-grid-fade {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fun-photo-fade-in {
+  animation: fun-grid-fade 0.4s ease-out;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 0.4; }
+  50% { opacity: 1; }
+}
