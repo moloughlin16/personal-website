@@ -86,8 +86,7 @@ export default function FunPage() {
         Fun Stuff
       </h1>
       <p className="text-muted mb-12 animate-fade-in-up stagger-1">
-        In my free time I love baking, painting, training martial arts, and
-        spending time outdoors
+        A few things I love to do in my free time
       </p>
 
       {/* Category tabs */}
