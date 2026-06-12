@@ -7,30 +7,6 @@ export default function CVPage() {
         Curriculum Vitae
       </h1>
 
-      {/* Education */}
-      <Section title="Education">
-        <CVEntry
-          title="Duke University"
-          subtitle="MS in Global Health | Certificate in Innovation and Entrepreneurship"
-          date="Aug 2024 – May 2026"
-        >
-          <p>Focus on implementation science, data analysis and visualization, and global health policy</p>
-          <p>Thesis: Balancing Culture, Nutrition, and Budget: The Design &amp; Implementation of a Cost-Optimized Nutrition Program for Pediatric Cancer Patients in Tanzania</p>
-          <div className="flex gap-3 mt-3 flex-wrap">
-            <Polaroid src="/images/graduation.jpg" caption="Graduation" rotate="left" />
-          </div>
-        </CVEntry>
-        <CVEntry
-          title="Brigham Young University"
-          subtitle="BS in Public Health, Health Science emphasis | Minor in International Development"
-          date="Aug 2016 – Jun 2023"
-        >
-          <div className="flex gap-3 mt-3 flex-wrap">
-            <Polaroid src="/images/byu.jpg" caption="BYU" rotate="right" />
-          </div>
-        </CVEntry>
-      </Section>
-
       {/* Work Experience */}
       <Section title="Work Experience">
         <CVEntry
@@ -55,18 +31,6 @@ export default function CVPage() {
           </p>
         </CVEntry>
         <CVEntry
-          title="Housekeeper"
-          subtitle="Holland America and Princess Cruise Lines | Denali National Park, AK"
-          date="Mar 2024 – Jul 2024"
-        >
-          <p>
-            I spent a season working as a housekeeper in Denali, AK for Holland America/Princess Cruise Lines as part of their land-cruise operation.
-          </p>
-          <div className="flex gap-3 mt-3 flex-wrap">
-            <Polaroid src="/images/denali.jpg" caption="Denali" rotate="left" />
-          </div>
-        </CVEntry>
-        <CVEntry
           title="Assistant Executive Director"
           subtitle="2ft Prosthetics | Remote"
           date="Dec 2022 – Aug 2024"
@@ -76,6 +40,18 @@ export default function CVPage() {
           </p>
           <div className="flex gap-3 mt-3 flex-wrap">
             <Polaroid src="/images/2ft-fitting.jpg" caption="Dominican Republic" rotate="right" />
+          </div>
+        </CVEntry>
+        <CVEntry
+          title="Housekeeper"
+          subtitle="Holland America and Princess Cruise Lines | Denali National Park, AK"
+          date="Mar 2024 – Jul 2024"
+        >
+          <p>
+            I spent a season working as a housekeeper in Denali, AK for Holland America/Princess Cruise Lines as part of their land-cruise operation.
+          </p>
+          <div className="flex gap-3 mt-3 flex-wrap">
+            <Polaroid src="/images/denali.jpg" caption="Denali" rotate="left" />
           </div>
         </CVEntry>
         <CVEntry
@@ -131,6 +107,30 @@ export default function CVPage() {
           </p>
           <div className="flex gap-3 mt-3 flex-wrap">
             <Polaroid src="/images/crete.jpg" caption="Crete" rotate="right" />
+          </div>
+        </CVEntry>
+      </Section>
+
+      {/* Education */}
+      <Section title="Education">
+        <CVEntry
+          title="Duke University"
+          subtitle="MS in Global Health | Certificate in Innovation and Entrepreneurship"
+          date="Aug 2024 – May 2026"
+        >
+          <p>Focus on implementation science, data analysis and visualization, and global health policy</p>
+          <p>Thesis: Balancing Culture, Nutrition, and Budget: The Design &amp; Implementation of a Cost-Optimized Nutrition Program for Pediatric Cancer Patients in Tanzania</p>
+          <div className="flex gap-3 mt-3 flex-wrap">
+            <Polaroid src="/images/graduation.jpg" caption="Graduation" rotate="left" />
+          </div>
+        </CVEntry>
+        <CVEntry
+          title="Brigham Young University"
+          subtitle="BS in Public Health, Health Science emphasis | Minor in International Development"
+          date="Aug 2016 – Jun 2023"
+        >
+          <div className="flex gap-3 mt-3 flex-wrap">
+            <Polaroid src="/images/byu.jpg" caption="BYU" rotate="right" />
           </div>
         </CVEntry>
       </Section>
