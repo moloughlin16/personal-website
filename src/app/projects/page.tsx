@@ -74,7 +74,7 @@ const projects: Project[] = [
     linkLabel: "Read the publication",
   },
   {
-    title: "Mom's Meals",
+    title: "Family Recipe App",
     shortDescription:
       "This is a family recipe app I made for my mom. The \"Help me decide\" feature walks through a quick decision tree to narrow down what to make",
     fullDescription:

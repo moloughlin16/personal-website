@@ -74,6 +74,27 @@ body {
 .stagger-4 { animation-delay: 0.4s; }
 .stagger-5 { animation-delay: 0.5s; }
 
+/* Hero banner */
+.hero-banner {
+  width: 100%;
+  overflow: hidden;
+  border-radius: 0 0 1.5rem 1.5rem;
+  max-height: 520px;
+}
+
+.hero-banner-img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+}
+
+@media (max-width: 768px) {
+  .hero-banner {
+    max-height: 280px;
+  }
+}
+
 /* Scroll-reveal animations */
 .scroll-reveal {
   opacity: 0;
