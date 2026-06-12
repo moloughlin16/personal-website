@@ -18,7 +18,6 @@ export default function CVPage() {
           <p>Thesis: Balancing Culture, Nutrition, and Budget: The Design &amp; Implementation of a Cost-Optimized Nutrition Program for Pediatric Cancer Patients in Tanzania</p>
           <div className="flex gap-3 mt-3 flex-wrap">
             <Polaroid src="/images/graduation.jpg" caption="Graduation" rotate="left" />
-            <Polaroid src="/images/thesis-defense.jpg" caption="Thesis defense" rotate="right" />
           </div>
         </CVEntry>
         <CVEntry
