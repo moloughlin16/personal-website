@@ -23,7 +23,7 @@ export default function Home() {
           </h1>
 
           <p className="text-muted text-lg leading-relaxed mb-10 max-w-2xl animate-fade-in-up stagger-2">
-            I&apos;m a recent global health graduate with 4+ years of research and project management experience spanning nutrition, oncology, disability, education, and refugee health. What I care about more than cause area is the <em>way</em>{" "}global health work is done. I&apos;m drawn to organizations and initiatives that center transparency, accountability, and local ownership in their approach.
+            I&apos;m a recent global health graduate with research and project management experience spanning nutrition, education, cancer, disability, and immigration. I love tackling tough problems, building new things, and finding smarter ways to work—especially when the work is making the world a little better.
           </p>
 
           <div className="flex flex-wrap gap-4 animate-fade-in-up stagger-3">

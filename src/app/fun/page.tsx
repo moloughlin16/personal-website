@@ -89,7 +89,7 @@ export default function FunPage() {
         Life Outside Work
       </h1>
       <p className="text-muted mb-12 animate-fade-in-up stagger-1">
-        A few things I love to do in my free time
+        A few things I love to do in my free time.
       </p>
 
       {/* Category tabs */}
