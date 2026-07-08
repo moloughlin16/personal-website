@@ -106,26 +106,19 @@ body {
   transform: translateY(0);
 }
 
-/* Fun page photo grid */
-.fun-photo-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 16px;
+/* Fun page photo masonry */
+.fun-photo-masonry {
+  columns: 3;
+  column-gap: 16px;
 }
 
-.fun-photo-hero {
-  grid-column: span 2;
+.fun-photo-masonry > * {
+  break-inside: avoid;
 }
 
 @media (max-width: 768px) {
-  .fun-photo-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media (max-width: 480px) {
-  .fun-photo-grid {
-    grid-template-columns: repeat(2, 1fr);
+  .fun-photo-masonry {
+    columns: 2;
   }
 }
 

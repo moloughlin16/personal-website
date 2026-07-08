@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { useState, useEffect, useCallback } from "react";
+import { useState } from "react";
 import ScrollReveal from "@/components/ScrollReveal";
 
 type FunCategory = {
@@ -61,25 +61,6 @@ const categories: FunCategory[] = [
 
 export default function FunPage() {
   const [activeIndex, setActiveIndex] = useState(0);
-  const [isPaused, setIsPaused] = useState(false);
-
-  const advance = useCallback(() => {
-    setActiveIndex((prev) => (prev + 1) % categories.length);
-  }, []);
-
-  // Auto-cycle every 10 seconds unless paused
-  useEffect(() => {
-    if (isPaused) return;
-    const timer = setInterval(advance, 10000);
-    return () => clearInterval(timer);
-  }, [isPaused, advance]);
-
-  const handleTabClick = (index: number) => {
-    setActiveIndex(index);
-    setIsPaused(true);
-    // Resume auto-cycling after 15 seconds of inactivity
-    setTimeout(() => setIsPaused(false), 15000);
-  };
 
   const active = categories[activeIndex];
 
@@ -97,7 +78,7 @@ export default function FunPage() {
         {categories.map((cat, i) => (
           <button
             key={cat.title}
-            onClick={() => handleTabClick(i)}
+            onClick={() => setActiveIndex(i)}
             className={`px-5 py-2.5 rounded-full text-sm font-semibold transition-all duration-300 ${
               i === activeIndex
                 ? "bg-accent text-white shadow-md scale-105"
@@ -107,52 +88,20 @@ export default function FunPage() {
             {cat.title}
           </button>
         ))}
-
-        {/* Auto-cycle indicator */}
-        <div
-          className="flex items-center gap-1.5 ml-2 text-xs text-muted/50"
-          style={{ alignSelf: "center" }}
-        >
-          {!isPaused && (
-            <>
-              <span
-                className="inline-block w-1.5 h-1.5 rounded-full bg-accent/40"
-                style={{ animation: "pulse 2s ease-in-out infinite" }}
-              />
-              <span>auto</span>
-            </>
-          )}
-        </div>
       </div>
 
       {/* Photo grid for active category */}
-      <div key={active.title} className="fun-photo-grid fun-photo-fade-in">
+      <div key={active.title} className="fun-photo-masonry fun-photo-fade-in">
         {active.photos.map((src, i) => (
-          <ScrollReveal
-            key={src}
-            delay={i * 0.08}
-            className={i === 0 ? "fun-photo-hero" : ""}
-          >
-            <div
-              style={{
-                position: "relative",
-                width: "100%",
-                aspectRatio: i === 0 ? "4/3" : "1/1",
-                overflow: "hidden",
-                backgroundColor: i === 0 ? "var(--card-bg)" : undefined,
-              }}
-              className="rounded-xl group"
-            >
+          <ScrollReveal key={src} delay={i * 0.08}>
+            <div className="rounded-xl overflow-hidden group mb-4">
               <Image
                 src={src}
                 alt={`${active.title} photo ${i + 1}`}
-                fill
-                sizes={
-                  i === 0
-                    ? "(max-width: 768px) 100vw, 66vw"
-                    : "(max-width: 768px) 100vw, 33vw"
-                }
-                className={`${i === 0 ? "object-contain" : "object-cover"} transition-transform duration-500 group-hover:scale-105`}
+                width={800}
+                height={600}
+                sizes="(max-width: 480px) 50vw, (max-width: 768px) 50vw, 33vw"
+                className="w-full h-auto object-cover transition-transform duration-500 group-hover:scale-105"
               />
             </div>
           </ScrollReveal>
