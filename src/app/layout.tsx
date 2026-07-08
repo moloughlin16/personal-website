@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
+import { Analytics } from "@vercel/analytics/next";
 import Navbar from "@/components/Navbar";
 import "./globals.css";
 
@@ -31,6 +32,7 @@ export default function RootLayout({
       <body className="min-h-full flex flex-col" suppressHydrationWarning>
         <Navbar />
         <main className="flex-1">{children}</main>
+        <Analytics />
         <footer className="border-t border-card-border py-6 text-center text-sm text-muted">
           <div className="flex justify-center gap-6">
             <a href="mailto:moloughlin16@gmail.com" className="hover:text-accent transition-colors">Email</a>
