@@ -52,6 +52,9 @@ const categories: FunCategory[] = [
       "/images/fun/adventures/adv-6.jpg",
       "/images/fun/adventures/adv-7.jpg",
       "/images/fun/adventures/adv-8.jpg",
+      "/images/fun/adventures/adv-9.jpg",
+      "/images/fun/adventures/adv-10.jpg",
+      "/images/fun/adventures/adv-11.jpg",
     ],
   },
 ];
