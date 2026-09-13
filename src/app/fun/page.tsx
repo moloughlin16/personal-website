@@ -7,6 +7,8 @@ import ScrollReveal from "@/components/ScrollReveal";
 type FunCategory = {
   title: string;
   photos: string[];
+  /** Photos shown at full width of the gallery column instead of half. */
+  featured?: string[];
 };
 
 const categories: FunCategory[] = [
@@ -31,16 +33,22 @@ const categories: FunCategory[] = [
       "/images/fun/baking/bk-4.jpg",
       "/images/fun/baking/bk-5.jpg",
       "/images/fun/baking/bk-6.jpg",
+      "/images/fun/baking/bk-7.jpg",
     ],
   },
   {
     title: "Painting",
     photos: [
       "/images/fun/painting/pt-2.jpg",
-      "/images/fun/painting/pt-1.jpg",
-      "/images/fun/painting/pt-3.jpg",
-      "/images/fun/painting/pt-4.jpg",
       "/images/fun/painting/pt-5.jpg",
+      "/images/fun/painting/pt-1.jpg",
+      "/images/fun/painting/pt-4.jpg",
+      "/images/fun/painting/pt-3.jpg",
+    ],
+    featured: [
+      "/images/fun/painting/pt-2.jpg",
+      "/images/fun/painting/pt-5.jpg",
+      "/images/fun/painting/pt-3.jpg",
     ],
   },
   {
@@ -94,21 +102,37 @@ export default function FunPage() {
       </div>
 
       {/* Photo grid for active category */}
-      <div key={active.title} className="fun-photo-masonry fun-photo-fade-in">
-        {active.photos.map((src, i) => (
-          <ScrollReveal key={src} delay={i * 0.08}>
-            <div className="rounded-xl overflow-hidden group mb-4">
-              <Image
-                src={src}
-                alt={`${active.title} photo ${i + 1}`}
-                width={800}
-                height={600}
-                sizes="(max-width: 480px) 50vw, (max-width: 768px) 50vw, 33vw"
-                className="w-full h-auto object-cover transition-transform duration-500 group-hover:scale-105"
-              />
-            </div>
-          </ScrollReveal>
-        ))}
+      <div
+        key={active.title}
+        className={`fun-photo-masonry fun-photo-fade-in${
+          active.featured ? " fun-photo-masonry--spotlight" : ""
+        }`}
+      >
+        {active.photos.map((src, i) => {
+          const isFeatured = active.featured?.includes(src) ?? false;
+          return (
+            <ScrollReveal
+              key={src}
+              delay={i * 0.08}
+              className={isFeatured ? "fun-photo-featured" : ""}
+            >
+              <div className="rounded-xl overflow-hidden group mb-4">
+                <Image
+                  src={src}
+                  alt={`${active.title} photo ${i + 1}`}
+                  width={800}
+                  height={600}
+                  sizes={
+                    isFeatured
+                      ? "(max-width: 768px) 100vw, 760px"
+                      : "(max-width: 480px) 50vw, (max-width: 768px) 50vw, 33vw"
+                  }
+                  className="w-full h-auto object-cover transition-transform duration-500 group-hover:scale-105"
+                />
+              </div>
+            </ScrollReveal>
+          );
+        })}
       </div>
     </div>
   );

@@ -122,6 +122,33 @@ body {
   }
 }
 
+/*
+ * Spotlight variant: a narrower two-column gallery where selected pieces span
+ * the full column width. Used for Painting, where a few canvases should read
+ * as the main event rather than as thumbnails in a uniform grid.
+ */
+.fun-photo-masonry--spotlight {
+  columns: 2;
+  max-width: 760px;
+  margin-inline: auto;
+}
+
+.fun-photo-masonry--spotlight .fun-photo-featured {
+  column-span: all;
+}
+
+/* Shrink-wrap the rounded frame so it tracks a height-capped image. */
+.fun-photo-masonry--spotlight .fun-photo-featured > div {
+  width: fit-content;
+  margin-inline: auto;
+}
+
+.fun-photo-masonry--spotlight .fun-photo-featured img {
+  width: auto;
+  max-width: 100%;
+  max-height: 72vh;
+}
+
 /* Fun page tab transition */
 @keyframes fun-grid-fade {
   from {
