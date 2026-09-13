@@ -33,8 +33,8 @@ const categories: FunCategory[] = [
         alt: "Grappling with a training partner on the mats",
       },
       {
-        src: "/images/fun/martial-arts/ma-3.jpg",
-        alt: "Throwing a kick into a partner's guard under the Elevate MMA Academy banner",
+        src: "/images/fun/martial-arts/ma-8.jpg",
+        alt: "Throwing a kick that a training partner blocks during striking practice",
       },
       {
         src: "/images/fun/martial-arts/ma-6.jpg",
