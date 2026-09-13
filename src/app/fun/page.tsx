@@ -54,6 +54,7 @@ const categories: FunCategory[] = [
       "/images/fun/adventures/adv-4.jpg",
       "/images/fun/adventures/adv-5.jpg",
       "/images/fun/adventures/adv-11.jpg",
+      "/images/fun/adventures/adv-12.jpg",
       "/images/fun/adventures/adv-6.jpg",
       "/images/fun/adventures/adv-7.jpg",
       "/images/fun/adventures/adv-8.jpg",
