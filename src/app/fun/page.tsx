@@ -14,8 +14,10 @@ const categories: FunCategory[] = [
     title: "Martial Arts",
     photos: [
       "/images/fun/martial-arts/ma-4.jpg",
+      "/images/fun/martial-arts/ma-7.jpg",
       "/images/fun/martial-arts/ma-1.jpg",
       "/images/fun/martial-arts/ma-3.jpg",
+      "/images/fun/martial-arts/ma-6.jpg",
       "/images/fun/martial-arts/ma-2.jpg",
       "/images/fun/martial-arts/ma-5.jpg",
     ],
