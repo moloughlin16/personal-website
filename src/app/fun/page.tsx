@@ -147,10 +147,6 @@ const categories: FunCategory[] = [
         alt: "A braided river winding through an autumn valley below snowy peaks",
       },
       {
-        src: "/images/fun/adventures/adv-12.jpg",
-        alt: "Pausing at a waterfall overlook with a toddler in a hiking carrier",
-      },
-      {
         src: "/images/fun/adventures/adv-6.jpg",
         alt: "Trailside selfie on a ridge above a wide mountain valley",
       },
