@@ -1,14 +1,18 @@
 "use client";
 
 import Image from "next/image";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import ScrollReveal from "@/components/ScrollReveal";
 
 type FunPhoto = {
   src: string;
   alt: string;
-  /** Shown at the full width of the gallery column instead of half. */
+  /** Spans two grid columns instead of one, in a category that uses the grid. */
   featured?: boolean;
+  /** Natural size, as displayed. Required for photos laid out by the grid,
+   *  which derives each tile's row span from the aspect ratio. */
+  width?: number;
+  height?: number;
 };
 
 type FunCategory = {
@@ -87,26 +91,42 @@ const categories: FunCategory[] = [
     title: "Painting",
     photos: [
       {
-        src: "/images/fun/painting/pt-2.jpg",
-        alt: "Painting of a park path in autumn, city towers rising behind orange trees",
-        featured: true,
-      },
-      {
-        src: "/images/fun/painting/pt-5.jpg",
+        src: "/images/fun/painting/pt-8.jpg",
         alt: "Painting of canoes moored at a dock on a turquoise lake below snow-streaked peaks",
+        width: 1686,
+        height: 2576,
         featured: true,
       },
       {
         src: "/images/fun/painting/pt-1.jpg",
         alt: "Painting in progress on the easel: red waterfront buildings on pilings at sunset",
+        width: 1242,
+        height: 1963,
       },
       {
         src: "/images/fun/painting/pt-4.jpg",
         alt: "Painted study of an anatomical heart on a small canvas",
+        width: 3024,
+        height: 4032,
       },
       {
-        src: "/images/fun/painting/pt-3.jpg",
+        src: "/images/fun/painting/pt-7.jpg",
+        alt: "Painting of a park path in autumn, city towers rising behind orange trees",
+        width: 1186,
+        height: 893,
+        featured: true,
+      },
+      {
+        src: "/images/fun/painting/pt-9.jpg",
+        alt: "Filling in a stained-glass style mural on a cinder-block wall",
+        width: 2534,
+        height: 2576,
+      },
+      {
+        src: "/images/fun/painting/pt-6.jpg",
         alt: "Painting of a single rose in bloom, pink petals fading to yellow at the center",
+        width: 2576,
+        height: 2090,
         featured: true,
       },
     ],
@@ -162,6 +182,103 @@ const categories: FunCategory[] = [
   },
 ];
 
+/* Grid geometry, kept in sync with .fun-photo-grid in globals.css. */
+const GRID_GAP = 16;
+const GRID_ROW = 8;
+/* max-w-6xl (1152px) less the page's px-6 gutters. Used only for the first
+   paint, before the grid has been measured in the browser. */
+const GRID_ASSUMED_WIDTH = 1104;
+
+function PhotoTile({ photo }: { photo: FunPhoto }) {
+  return (
+    <div className="rounded-xl overflow-hidden group h-full">
+      <Image
+        src={photo.src}
+        alt={photo.alt}
+        width={photo.width ?? 800}
+        height={photo.height ?? 600}
+        sizes={
+          photo.featured
+            ? "(max-width: 768px) 100vw, 656px"
+            : "(max-width: 768px) 50vw, 432px"
+        }
+        className="w-full h-auto object-cover transition-transform duration-500 group-hover:scale-105"
+      />
+    </div>
+  );
+}
+
+/**
+ * Masonry grid where featured photos span two columns. Row height is a fixed
+ * 8px unit and each tile spans however many of those its aspect ratio needs,
+ * which is what lets a tall photo sit beside a stack of shorter ones instead
+ * of forcing a row of its own.
+ */
+function SpotlightGrid({ photos }: { photos: FunPhoto[] }) {
+  const ref = useRef<HTMLDivElement>(null);
+  const [columns, setColumns] = useState(5);
+  const [columnWidth, setColumnWidth] = useState(
+    (GRID_ASSUMED_WIDTH - 4 * GRID_GAP) / 5
+  );
+
+  useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+    const measure = () => {
+      const count = getComputedStyle(el)
+        .gridTemplateColumns.split(" ")
+        .filter(Boolean).length;
+      setColumns(count);
+      setColumnWidth((el.clientWidth - (count - 1) * GRID_GAP) / count);
+    };
+    measure();
+    const observer = new ResizeObserver(measure);
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, []);
+
+  return (
+    <div ref={ref} className="fun-photo-grid fun-photo-fade-in">
+      {photos.map((photo, i) => {
+        const wide = columns >= 5;
+        const colSpan = Math.min(
+          photo.featured ? (wide ? 3 : 2) : wide ? 2 : 1,
+          columns
+        );
+        const width = columnWidth * colSpan + GRID_GAP * (colSpan - 1);
+        const height = (width * (photo.height ?? 3)) / (photo.width ?? 4);
+        const rowSpan = Math.max(
+          1,
+          Math.ceil((height + GRID_GAP) / (GRID_ROW + GRID_GAP))
+        );
+        return (
+          <ScrollReveal
+            key={photo.src}
+            delay={i * 0.08}
+            style={{ gridColumn: `span ${colSpan}`, gridRow: `span ${rowSpan}` }}
+          >
+            <PhotoTile photo={photo} />
+          </ScrollReveal>
+        );
+      })}
+    </div>
+  );
+}
+
+function ColumnGallery({ photos }: { photos: FunPhoto[] }) {
+  return (
+    <div className="fun-photo-masonry fun-photo-fade-in">
+      {photos.map((photo, i) => (
+        <ScrollReveal key={photo.src} delay={i * 0.08}>
+          <div className="mb-4">
+            <PhotoTile photo={photo} />
+          </div>
+        </ScrollReveal>
+      ))}
+    </div>
+  );
+}
+
 export default function FunPage() {
   const [activeIndex, setActiveIndex] = useState(0);
 
@@ -195,35 +312,11 @@ export default function FunPage() {
       </div>
 
       {/* Photo grid for active category */}
-      <div
-        key={active.title}
-        className={`fun-photo-masonry fun-photo-fade-in${
-          hasFeatured ? " fun-photo-masonry--spotlight" : ""
-        }`}
-      >
-        {active.photos.map((photo, i) => (
-          <ScrollReveal
-            key={photo.src}
-            delay={i * 0.08}
-            className={photo.featured ? "fun-photo-featured" : ""}
-          >
-            <div className="rounded-xl overflow-hidden group mb-4">
-              <Image
-                src={photo.src}
-                alt={photo.alt}
-                width={800}
-                height={600}
-                sizes={
-                  photo.featured
-                    ? "(max-width: 768px) 100vw, 760px"
-                    : "(max-width: 480px) 50vw, (max-width: 768px) 50vw, 33vw"
-                }
-                className="w-full h-auto object-cover transition-transform duration-500 group-hover:scale-105"
-              />
-            </div>
-          </ScrollReveal>
-        ))}
-      </div>
+      {hasFeatured ? (
+        <SpotlightGrid key={active.title} photos={active.photos} />
+      ) : (
+        <ColumnGallery key={active.title} photos={active.photos} />
+      )}
     </div>
   );
 }

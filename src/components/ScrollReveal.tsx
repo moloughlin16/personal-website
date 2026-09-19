@@ -6,10 +6,12 @@ export default function ScrollReveal({
   children,
   delay = 0,
   className = "",
+  style,
 }: {
   children: React.ReactNode;
   delay?: number;
   className?: string;
+  style?: React.CSSProperties;
 }) {
   const ref = useRef<HTMLDivElement>(null);
   const [isVisible, setIsVisible] = useState(false);
@@ -36,7 +38,7 @@ export default function ScrollReveal({
     <div
       ref={ref}
       className={`scroll-reveal ${isVisible ? "visible" : ""} ${className}`}
-      style={{ transitionDelay: `${delay}s` }}
+      style={{ ...style, transitionDelay: `${delay}s` }}
     >
       {children}
     </div>
